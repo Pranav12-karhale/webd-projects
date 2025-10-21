@@ -1,0 +1,129 @@
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    background:rgb(55, 55, 55);
+    text-align:center;
+    justify-content:center;
+    align-items:center;
+    align-content: center;
+    justify-items: center;
+}
+.heads{
+    background:rgb(55, 55, 55);
+text-align:center;
+justify-content:center;
+align-items:center;
+font-family:Roboto,Arial, sans-serif;
+color:rgba(255, 255, 255, 0.505);
+text-shadow:0 0 19px rgb(0, 0, 0);
+}
+.container{
+background:rgb(0, 0, 0);
+width:80%;
+height:80vh;
+text-align:left;
+/* justify-content:center;
+align-items:center; */
+font-family:Roboto,Arial, sans-serif;
+color:rgb(187,187,187);
+text-shadow:0 0 19px rgb(144, 144, 144);
+border-radius:30px;
+margin-top:0px;
+box-shadow:0px 0px 30px rgb(0, 0, 0);
+}
+.space123{
+    background:rgba(0, 0, 0, 0);
+    height:30px;
+
+}
+.newtask{
+    background:rgb(55, 55, 55);
+    text-align:center;
+    justify-content:center;
+    align-items:center;
+    font-family:Roboto,Arial, sans-serif;
+    color:rgb(187, 187, 187);
+    text-shadow:0 0 19px rgb(248, 0, 0);
+
+}
+#add{
+    height:50px;
+    width:50px;
+    border-radius:20px;
+    background:black;
+    outline:0;
+   border:0;
+   padding:0;
+   margin:0;
+    text-align:center;
+    justify-content:center;
+    align-items:center;
+    align-content: center;
+}
+#add:hover{
+    background:rgb(70, 70, 70);
+}
+.add1{
+    font-size: 50px;
+    color:white;
+}
+#del{
+    height:50px;
+    width:50px;
+    border-radius:20px;
+    background:black;
+    outline:0;
+   border:0;
+   padding:0;
+   margin:0;
+    text-align:center;
+    justify-content:center;
+    align-items:center;
+    align-content: center;
+}
+.del1{
+        font-size: 50px;
+        color:white;
+}
+.input{
+margin-top:40px;
+height:1px;
+width:100vw;
+text-align:center;
+justify-content:center;
+align-items:center;
+align-content: center;
+}
+#in{
+    align-self: center;
+    float:center;
+    position:relative;
+    height:10px;
+    width:400px;
+    outline:0;
+    border:0;
+    border-radius:25px;
+    padding:20px;
+    box-shadow:0 0 40px rgb(58, 58, 58);
+}
+.task{
+background:rgb(94, 94, 94);
+width:80%;
+height:100vh;
+text-align:center;
+justify-content:center;
+align-items:center;
+align-content: center;
+justify-items: center;
+font-family:Roboto,Arial, sans-serif;
+color:rgb(0, 0, 0);
+text-shadow:0 0 19px rgb(0, 0, 0);
+border-radius:30px;
+margin-top:20px
+}
+#taskhead{
+   color:black;
+   margin-top:60px
+}
