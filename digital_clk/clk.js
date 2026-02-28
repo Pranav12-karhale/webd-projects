@@ -98,6 +98,64 @@ let hour1=Number(hours);
     setInterval(updateClock,1000);
     updateClock();
 
+// Live sky background
+function updateBackgroundSky() {
+    const now = new Date();
+    
+    // Get IST time
+    const istString = now.toLocaleString('en-US', { 
+        timeZone: 'Asia/Kolkata', hour12: false, hour: '2-digit', minute: '2-digit' 
+    });
+    
+    let [hourStr, minuteStr] = istString.split(':');
+    let hour = parseInt(hourStr, 10);
+    if (hour === 24){
+      hour = 0;
+    }
+    const decimalHour = hour + (parseInt(minuteStr, 10) / 60);
+
+    const sun = document.getElementById('sun');
+    const moon = document.getElementById('moon');
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
+    if (decimalHour >= 6 && decimalHour < 18) {
+        // Daytime
+        document.body.style.backgroundColor = getSkyColor(decimalHour);
+        sun.style.display = 'block';
+        moon.style.display = 'none';
+        
+        const progress = (decimalHour - 6) / 12;
+        sun.style.left = `calc(${progress * screenWidth}px - 50px)`;
+        sun.style.bottom = `${Math.sin(progress * Math.PI) * (screenHeight * 0.75)}px`;
+    }
+    else {
+        // Nighttime
+        document.body.style.backgroundColor = '#0b0d17';
+        sun.style.display = 'none';
+        moon.style.display = 'block';
+        
+        let progress = decimalHour >= 18 ? (decimalHour - 18) / 12 : (decimalHour + 6) / 12;
+        moon.style.left = `calc(${progress * screenWidth}px - 50px)`;
+        moon.style.bottom = `${Math.sin(progress * Math.PI) * (screenHeight * 0.75)}px`;
+    }
+}
+
+function getSkyColor(hour) {
+    if (hour >= 6 && hour < 8) {
+      return '#1a2b4c'; // Pre-dawn deep blue
+    }
+    if (hour >= 8 && hour < 16) {
+      return '#87CEEB'; // Midday
+    }
+    if (hour >= 16 && hour < 18) {
+      return '#ff7e67'; // Sunset
+    }
+      return '#0b0d17'; // Night
+}
+
+setInterval(updateBackgroundSky, 60000); 
+updateBackgroundSky();
 
 
 
