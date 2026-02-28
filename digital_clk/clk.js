@@ -53,10 +53,10 @@ let hour1=Number(hours);
     document.getElementById('clock').textContent=`${hour2}:${min2}:${seconds}`;
     document.getElementById('ampm').textContent=`${ampm}`;
     document.getElementById("ampm").style.display="block";
-    if(Number(hour2)<12 && ampm==="AM"){
+    if(Number(hour2)<12 && Number(hour2)>=5 && ampm==="AM"){
       document.querySelector(".greet").textContent="Good Morning";
     }
-    else if(Number(hour2)<5 && ampm==="PM"){
+    else if((Number(hour2)<5 || Number(hour2)>=12) && ampm==="PM" ){
       document.querySelector(".greet").textContent="Good Afternoon";
     }
     else if(Number(hour2)>=5 && Number(hour2)<7 && ampm==="PM"){
@@ -70,7 +70,12 @@ let hour1=Number(hours);
     document.getElementById('clock').textContent=`${hours}:${minutes}:${seconds}`;  
     document.getElementById("ampm").style.display="none";
     if(Number(hours)<12){
+      if(Number(hours)>=5){
       document.querySelector(".greet").textContent="Good Morning";
+    }
+      else{
+        document.querySelector(".greet").textContent="Good Night";
+      }
     }
     else if(Number(hours)>=12 && Number(hours)<17 ){
       document.querySelector(".greet").textContent="Good Afternoon";
@@ -92,6 +97,7 @@ let hour1=Number(hours);
         
     setInterval(updateClock,1000);
     updateClock();
+
 
 
 
