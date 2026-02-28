@@ -1,100 +1,101 @@
 *{
-padding:0;
-margin:0;
+  padding:0;
+  margin:0;
 }
 body {
-    display:flex;
-    margin:0;
-    background-color:#2c2c2c;
-    font-family:Arial,sans-serif;
-  }
-  .clkcontainer{
-    display:flex;
-    margin:0;
-    background-color:#2c2c2c;
-    font-family:Arial,sans-serif;
-    width:50vw;
-    height:70vh;
-  }
-  .clock{
-    color:rgb(148, 148, 148);
-    font-size:5rem;
-   margin-left:120px;
-    margin-top:120px;
-    position: absolute;
-  }
-  .clock:hover{
-    font-size:5.5rem;
-  }
-  .date{
-    color:antiquewhite;
-    text-align:center;
-    justify-content:center;
-    align-self: center;
-    position:fixed;
-    margin-left:130px;
-  }
-  .day{
-    color:antiquewhite;
-    text-align:center;
-    justify-content:center;
-    align-self: center;
-    position:fixed;
-    margin-top:60px;
-    margin-left:150px;
-    font-size:30px;
-    font-weight:400;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  .day:hover{
-    font-size:35px; 
-  }
-  #btn{
-    width:190px;
-    height:110px;
-    position:relative;
-    border:none;
-     left:900px;
-     top:200px;
-     border-radius:50px;
-     box-shadow:0 0 10px rgb(160, 160, 160);
-     color:black;
-     font-size: 30px;
-     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display:flex;
+  margin:0;
+  font-family:Arial,sans-serif;
+  transition: background-color 2s ease; 
+  overflow: hidden; 
+}
+.clkcontainer{
+  display:flex;
+  margin:0;
+  background-color: transparent; 
+  font-family:Arial,sans-serif;
+  width:50vw;
+  height:70vh;
+}
+.clock{
+  color:rgb(148, 148, 148);
+  font-size:5rem;
+  margin-left:120px;
+  margin-top:120px;
+  position: absolute;
+}
+.clock:hover{
+  font-size:5.5rem;
+}
+.date{
+  color:antiquewhite;
+  text-align:center;
+  justify-content:center;
+  align-self: center;
+  position:fixed;
+  margin-left:130px;
+}
+.day{
+  color:antiquewhite;
+  text-align:center;
+  justify-content:center;
+  align-self: center;
+  position:fixed;
+  margin-top:60px;
+  margin-left:150px;
+  font-size:30px;
+  font-weight:400;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.day:hover{
+  font-size:35px; 
+}
+#btn{
+  width:190px;
+  height:110px;
+  position:relative;
+  border:none;
+  left:900px;
+  top:200px;
+  border-radius:50px;
+  box-shadow:0 0 10px rgb(160, 160, 160);
+  color:black;
+  font-size: 30px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background:rgba(201, 201, 201, 0.847);
-    }
-    #btn:hover{
-      background:whitesmoke;
-    }
-  #btn2{
-    width:190px;
-    height:110px;
-    position:relative;
-    border:none;
-    left:500px;
-    top:400px;
-    border-radius:50px;
-    box-shadow:0 0 10px rgb(160, 160, 160);
-    color:black;
-    font-size: 30px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background:rgba(201, 201, 201, 0.847);
-  }
-  #btn2:hover{
-    background:whitesmoke;
-  }
+}
+#btn:hover{
+  background:whitesmoke;
+}
+#btn2{
+  width:190px;
+  height:110px;
+  position:relative;
+  border:none;
+  left:500px;
+  top:400px;
+  border-radius:50px;
+  box-shadow:0 0 10px rgb(160, 160, 160);
+  color:black;
+  font-size: 30px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background:rgba(201, 201, 201, 0.847);
+}
+#btn2:hover{
+  background:whitesmoke;
+}
 #ampm{
   color:antiquewhite;
-    text-align:center;
-    justify-content:center;
-    align-self: center;
-    position:fixed;
-    margin-top:-210px;
-    margin-left:440px;
-    font-size:30px;
-    font-weight:400;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display:block
+  text-align:center;
+  justify-content:center;
+  align-self: center;
+  position:fixed;
+  margin-top:-210px;
+  margin-left:440px;
+  font-size:30px;
+  font-weight:400;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display:block
 }
 #ampm:hover{
   font-size:40px;
@@ -104,7 +105,28 @@ body {
   margin-top:600px;
   font-size:40px;
   float:left;
+  color:antiquewhite;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-color:antiquewhite;
-font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.celestial-body {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  bottom: -50px;
+  transition: left 1s linear, bottom 1s linear;
+  z-index: -1;
+}
+
+#sun {
+  background: radial-gradient(circle, #fff3b0, #ff8c00);
+  box-shadow: 0 0 60px #ff8c00;
+  display: none;
+}
+
+#moon {
+  background: radial-gradient(circle, #f4f6f0, #b0b5a8);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+  display: none;
 }
